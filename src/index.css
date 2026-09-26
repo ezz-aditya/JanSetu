@@ -1,7 +1,14 @@
-@import 'tailwindcss';
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Manrope:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@400;500;600;700&display=swap');
 
 @import "tailwindcss";
+
+:root {
+  --gunmetal: #2E3532;
+  --amaranth: #8B2635;
+  --linen: #E0E2DB;
+  --dust: #D2D4C8;
+  --tea: #D3EFBD;
+}
 
 * {
   box-sizing: border-box;
@@ -13,27 +20,41 @@ html {
 
 body {
   margin: 0;
-  font-family: "DM Sans", sans-serif;
-  background: #f4f3ef;
+  background: var(--linen);
+  color: var(--gunmetal);
+  font-family: "Inter", sans-serif;
 }
 
 h1,
 h2,
-h3 {
+h3,
+h4 {
   font-family: "Manrope", sans-serif;
 }
 
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
 ::selection {
-  background: #111;
+  background: var(--amaranth);
   color: white;
 }
 
-@keyframes marquee {
-  from {
-    transform: translateX(0);
-  }
+::-webkit-scrollbar {
+  width: 8px;
+}
 
-  to {
-    transform: translateX(-50%);
-  }
+::-webkit-scrollbar-track {
+  background: var(--linen);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--gunmetal);
+  border-radius: 20px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--amaranth);
 }
