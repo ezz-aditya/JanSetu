@@ -58,7 +58,7 @@ function Landing({ onEnter }) {
             </div>
 
             <span className="font-semibold tracking-tight">
-              GOV<span className="font-light">CONNECT</span>
+              ADITYA<span className="font-light">CONNECT</span>
             </span>
           </div>
 
