@@ -63,10 +63,32 @@ export default function Dashboard() {
                 <div>
 
                   <h1 className="text-4xl md:text-6xl font-semibold tracking-[-0.05em] mt-4">
-                    Welcome back,
-                    <br />
-                    Aditya.
-                  </h1>
+  One gateway.
+  <br />
+  <span className="text-[#36A9C4]">Connected government.</span>
+</h1>
+
+<p className="mt-5 text-white/55 max-w-2xl leading-7">
+  GOVCONNECT connects fragmented government platforms through a unified
+  interoperability layer — so citizens can access services, track
+  applications and manage documents from one place.
+</p>
+
+<div className="flex flex-wrap gap-2 mt-6">
+  {["CONNECT", "STANDARDIZE", "EXCHANGE", "TRACK"].map((item, index) => (
+    <div
+      key={item}
+      className="flex items-center gap-2 px-3 py-2 rounded-full border border-white/10 bg-white/5"
+    >
+      <span className="text-[10px] font-bold text-[#36A9C4]">
+        0{index + 1}
+      </span>
+      <span className="text-[10px] tracking-[0.12em] text-white/60">
+        {item}
+      </span>
+    </div>
+  ))}
+</div>
 
                   <p className="mt-5 text-white/45 max-w-xl leading-7">
                     Manage government services, applications and documents
@@ -75,15 +97,139 @@ export default function Dashboard() {
 
                 </div>
 
-                <button className="bg-[#F4A340] text-[#0B1F33] px-6 py-3 rounded-lg font-bold w-fit hover:bg-white transition">
-                  + New Application
-                </button>
+                <button
+  onClick={() => window.location.href = "/services"}
+  className="bg-[#F4A340] text-[#0B1F33] px-6 py-3 rounded-lg font-bold w-fit hover:bg-white transition"
+>
+  Explore Services →
+</button>
 
               </div>
 
             </div>
 
           </section>
+          {/* USP / INTEROPERABILITY FLOW */}
+<section className="mt-5 bg-white border border-[#0B1F33]/10 rounded-2xl p-6 md:p-8">
+
+  <div className="flex flex-col xl:flex-row xl:items-center justify-between gap-8">
+
+    {/* LEFT */}
+    <div className="max-w-sm">
+
+      <p className="text-[10px] uppercase tracking-[0.2em] text-[#0B6E99] font-bold">
+        The GOVCONNECT Difference
+      </p>
+
+      <h2 className="text-2xl md:text-3xl font-semibold text-[#0B1F33] mt-2 tracking-tight">
+        Connect, don't replace.
+      </h2>
+
+      <p className="text-sm text-[#0B1F33]/50 mt-3 leading-6">
+        Existing government platforms stay in place while GOVCONNECT
+        creates a unified layer between departments and citizens.
+      </p>
+
+    </div>
+
+    {/* FLOW */}
+    <div className="flex-1">
+
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-3 items-center">
+
+        {/* EXISTING SYSTEMS */}
+        <div className="bg-[#F5F7F8] rounded-xl p-5 border border-[#0B1F33]/10">
+
+          <p className="text-[10px] uppercase tracking-[0.15em] text-[#0B1F33]/40 font-bold">
+            Existing Systems
+          </p>
+
+          <div className="flex flex-wrap gap-2 mt-4">
+
+            {["Revenue", "Education", "Transport", "Welfare"].map(
+              (department) => (
+                <span
+                  key={department}
+                  className="px-3 py-2 bg-white border border-[#0B1F33]/10 rounded-lg text-[11px] text-[#0B1F33]/60"
+                >
+                  {department}
+                </span>
+              )
+            )}
+
+          </div>
+
+        </div>
+
+        {/* CONNECTOR */}
+        <div className="hidden md:flex items-center justify-center">
+          <div className="flex items-center gap-2 text-[#0B6E99]">
+            <span className="h-px w-8 bg-[#0B6E99]/30" />
+            <span className="text-lg">→</span>
+            <span className="h-px w-8 bg-[#0B6E99]/30" />
+          </div>
+        </div>
+
+        {/* GOVCONNECT */}
+        <div className="bg-[#0B1F33] rounded-xl p-5 text-white relative overflow-hidden">
+
+          <div className="absolute right-[-20px] top-[-20px] w-20 h-20 rounded-full bg-[#36A9C4]/20 blur-xl" />
+
+          <div className="relative">
+
+            <div className="flex items-center gap-2">
+
+              <span className="w-2 h-2 rounded-full bg-[#36A9C4]" />
+
+              <p className="text-[10px] uppercase tracking-[0.15em] text-[#36A9C4] font-bold">
+                GOVCONNECT
+              </p>
+
+            </div>
+
+            <p className="text-lg font-semibold mt-3">
+              Interoperability Layer
+            </p>
+
+            <div className="grid grid-cols-2 gap-2 mt-4">
+
+              {["Connect", "Standardize", "Exchange", "Track"].map(
+                (item) => (
+                  <div
+                    key={item}
+                    className="text-[10px] text-white/55 border border-white/10 rounded-md px-2 py-2"
+                  >
+                    {item}
+                  </div>
+                )
+              )}
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      {/* CITIZEN EXPERIENCE */}
+      <div className="mt-3 flex items-center justify-center gap-3">
+
+        <span className="h-px w-8 bg-[#0B6E99]/20" />
+
+        <div className="px-5 py-3 rounded-lg bg-[#0B6E99]/10 text-[#0B6E99] text-xs font-semibold">
+          One Connected Citizen Experience
+        </div>
+
+        <span className="h-px w-8 bg-[#0B6E99]/20" />
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
 
           {/* STATS */}
           <section className="grid grid-cols-2 xl:grid-cols-4 gap-4 mt-5">
@@ -175,132 +321,294 @@ export default function Dashboard() {
           </section>
 
           {/* APPLICATIONS */}
-          <section className="mt-12">
+<section className="mt-12">
 
-            <div className="mb-6">
+  <div className="flex items-end justify-between mb-6">
 
-              <p className="text-[10px] uppercase tracking-[0.2em] text-[#0B6E99] font-bold">
-                Activity
+    <div>
+      <p className="text-[10px] uppercase tracking-[0.2em] text-[#0B6E99] font-bold">
+        Activity
+      </p>
+
+      <h2 className="text-2xl md:text-3xl font-semibold text-[#0B1F33] mt-2">
+        Recent Applications
+      </h2>
+
+      <p className="text-sm text-[#0B1F33]/40 mt-2">
+        Track the latest updates across connected departments.
+      </p>
+    </div>
+
+    <button
+      onClick={() => window.location.href = "/applications"}
+      className="hidden md:block text-sm font-semibold text-[#0B6E99] hover:text-[#0B1F33] transition"
+    >
+      View all applications →
+    </button>
+
+  </div>
+
+  <div className="bg-white border border-[#0B1F33]/10 rounded-2xl overflow-hidden">
+
+    {applications.map((application, index) => (
+
+      <button
+        key={application.name}
+        onClick={() => window.location.href = "/applications"}
+        className={`w-full text-left p-5 md:p-6 flex flex-col md:flex-row md:items-center justify-between gap-5 hover:bg-[#F5F7F8] transition ${
+          index !== applications.length - 1
+            ? "border-b border-[#0B1F33]/10"
+            : ""
+        }`}
+      >
+
+        {/* APPLICATION INFO */}
+        <div className="flex items-center gap-4">
+
+          <div className="w-11 h-11 rounded-lg bg-[#0B6E99]/10 text-[#0B6E99] flex items-center justify-center font-bold text-xs">
+            APP
+          </div>
+
+          <div>
+
+            <h3 className="font-semibold text-[#0B1F33]">
+              {application.name}
+            </h3>
+
+            <p className="text-sm text-[#0B1F33]/40 mt-1">
+              {application.department}
+            </p>
+
+          </div>
+
+        </div>
+
+        {/* STATUS */}
+        <div className="flex items-center gap-5 md:gap-7">
+
+          <span className="text-xs text-[#0B1F33]/35">
+            {application.date}
+          </span>
+
+          <span
+            className={`px-4 py-2 rounded-full text-xs font-semibold ${
+              application.status === "Approved"
+                ? "bg-[#16834B]/10 text-[#16834B]"
+                : application.status === "Processing"
+                ? "bg-[#0B6E99]/10 text-[#0B6E99]"
+                : "bg-[#F4A340]/15 text-[#8a5a00]"
+            }`}
+          >
+            {application.status}
+          </span>
+
+          <span className="hidden md:block text-[#0B6E99]">
+            →
+          </span>
+
+        </div>
+
+      </button>
+
+    ))}
+
+  </div>
+
+  {/* MOBILE VIEW ALL */}
+  <button
+    onClick={() => window.location.href = "/applications"}
+    className="md:hidden mt-4 text-sm font-semibold text-[#0B6E99]"
+  >
+    View all applications →
+  </button>
+
+</section>
+
+          {/* INTEGRATION / USP */}
+<section className="mt-12 bg-[#0B1F33] rounded-2xl p-7 md:p-10 text-white overflow-hidden relative">
+
+  {/* BACKGROUND ACCENT */}
+  <div className="absolute right-[-100px] top-[-100px] w-[300px] h-[300px] rounded-full bg-[#36A9C4]/10 blur-3xl" />
+
+  <div className="relative">
+
+    {/* HEADER */}
+    <div className="max-w-2xl">
+
+      <p className="text-[10px] uppercase tracking-[0.2em] text-[#36A9C4] font-bold">
+        Core USP · Interoperability
+      </p>
+
+      <h2 className="text-2xl md:text-4xl font-semibold mt-3 tracking-tight">
+        Connect, don't replace.
+      </h2>
+
+      <p className="text-sm md:text-base text-white/45 mt-3 leading-7">
+        GOVCONNECT connects existing government platforms through a
+        unified interoperability layer, creating one seamless citizen
+        experience without replacing existing systems.
+      </p>
+
+    </div>
+
+
+    {/* SYSTEM FLOW */}
+    <div className="mt-10 grid lg:grid-cols-[1fr_auto_1.2fr_auto_1fr] gap-4 items-center">
+
+
+      {/* EXISTING PLATFORMS */}
+      <div className="border border-white/10 rounded-xl p-5 bg-white/[0.03]">
+
+        <p className="text-[10px] uppercase tracking-[0.15em] text-white/35 font-bold">
+          Existing Platforms
+        </p>
+
+        <div className="grid grid-cols-2 gap-2 mt-4">
+
+          {[
+            "Revenue",
+            "Education",
+            "Transport",
+            "Welfare",
+          ].map((department) => (
+
+            <div
+              key={department}
+              className="px-3 py-3 rounded-lg bg-white/5 border border-white/5 text-xs text-white/65"
+            >
+              {department}
+            </div>
+
+          ))}
+
+        </div>
+
+      </div>
+
+
+      {/* ARROW */}
+      <div className="hidden lg:flex text-[#36A9C4] text-2xl">
+        →
+      </div>
+
+
+      {/* GOVCONNECT */}
+      <div className="bg-[#123F5A] border border-[#36A9C4]/20 rounded-xl p-6 shadow-lg">
+
+        <div className="flex items-center gap-2">
+
+          <span className="w-2 h-2 rounded-full bg-[#36A9C4]" />
+
+          <p className="text-[10px] uppercase tracking-[0.18em] text-[#36A9C4] font-bold">
+            GOVCONNECT
+          </p>
+
+        </div>
+
+        <h3 className="text-xl font-semibold mt-4">
+          Interoperability Layer
+        </h3>
+
+        <p className="text-xs text-white/45 mt-2 leading-5">
+          One common layer for connected government systems.
+        </p>
+
+        <div className="grid grid-cols-2 gap-2 mt-5">
+
+          {[
+            "Connect",
+            "Standardize",
+            "Exchange",
+            "Track",
+          ].map((step, index) => (
+
+            <div
+              key={step}
+              className="border border-white/10 rounded-lg px-3 py-2.5"
+            >
+
+              <span className="text-[9px] text-[#36A9C4] font-bold">
+                0{index + 1}
+              </span>
+
+              <p className="text-[10px] text-white/65 mt-1">
+                {step}
               </p>
 
-              <h2 className="text-2xl md:text-3xl font-semibold mt-2">
-                Recent Applications
-              </h2>
+            </div>
+
+          ))}
+
+        </div>
+
+      </div>
+
+
+      {/* ARROW */}
+      <div className="hidden lg:flex text-[#36A9C4] text-2xl">
+        →
+      </div>
+
+
+      {/* CITIZEN */}
+      <div className="border border-white/10 rounded-xl p-5 bg-white/[0.03]">
+
+        <p className="text-[10px] uppercase tracking-[0.15em] text-white/35 font-bold">
+          Citizen Experience
+        </p>
+
+        <div className="mt-4 space-y-2">
+
+          {[
+            "One service gateway",
+            "Unified application tracking",
+            "Connected documents",
+          ].map((item) => (
+
+            <div
+              key={item}
+              className="flex items-center gap-3 px-3 py-3 rounded-lg bg-white/5"
+            >
+
+              <span className="w-1.5 h-1.5 rounded-full bg-[#36A9C4]" />
+
+              <span className="text-xs text-white/65">
+                {item}
+              </span>
 
             </div>
 
-            <div className="bg-white border border-[#0B1F33]/10 rounded-xl overflow-hidden">
+          ))}
 
-              {applications.map((application, index) => (
+        </div>
 
-                <div
-                  key={application.name}
-                  className={`p-5 md:p-6 flex flex-col md:flex-row md:items-center justify-between gap-5 ${
-                    index !== applications.length - 1
-                      ? "border-b border-[#0B1F33]/10"
-                      : ""
-                  }`}
-                >
+      </div>
 
-                  <div>
+    </div>
 
-                    <h3 className="font-semibold text-[#0B1F33]">
-                      {application.name}
-                    </h3>
 
-                    <p className="text-sm text-[#0B1F33]/40 mt-1">
-                      {application.department}
-                    </p>
+    {/* BOTTOM USP LINE */}
+    <div className="mt-8 pt-6 border-t border-white/10 flex flex-col md:flex-row md:items-center justify-between gap-4">
 
-                  </div>
+      <p className="text-sm text-white/50">
+        <span className="text-white font-semibold">
+          One connected journey.
+        </span>{" "}
+        Multiple government systems.
+      </p>
 
-                  <div className="flex items-center gap-6">
+      <button
+        onClick={() => window.location.href = "/integration"}
+        className="text-sm font-semibold text-[#36A9C4] hover:text-white transition"
+      >
+        View integration architecture →
+      </button>
 
-                    <span className="text-xs text-[#0B1F33]/35">
-                      {application.date}
-                    </span>
+    </div>
 
-                    <span
-                      className={`px-4 py-2 rounded-full text-xs font-semibold ${
-                        application.status === "Approved"
-                          ? "bg-[#16834B] text-white"
-                          : application.status === "Processing"
-                          ? "bg-[#0B6E99] text-white"
-                          : "bg-[#F4A340] text-[#0B1F33]"
-                      }`}
-                    >
-                      {application.status}
-                    </span>
+  </div>
 
-                  </div>
-
-                </div>
-
-              ))}
-
-            </div>
-
-          </section>
-
-          {/* INTEGRATION */}
-          <section className="mt-12 bg-[#0B1F33] rounded-2xl p-7 md:p-9 text-white">
-
-            <div className="flex flex-col xl:flex-row justify-between gap-8">
-
-              <div>
-
-                <p className="text-[10px] uppercase tracking-[0.2em] text-[#36A9C4] font-bold">
-                  Interoperability Layer
-                </p>
-
-                <h2 className="text-2xl md:text-3xl font-semibold mt-3">
-                  Connected Government
-                </h2>
-
-                <p className="text-sm text-white/40 max-w-md mt-3 leading-6">
-                  Overview of connected government departments and
-                  digital platforms.
-                </p>
-
-              </div>
-
-              <div className="grid grid-cols-2 gap-3 xl:min-w-[400px]">
-
-                {[
-                  "Revenue",
-                  "Education",
-                  "Transport",
-                  "Social Welfare",
-                ].map((department) => (
-
-                  <div
-                    key={department}
-                    className="border border-white/10 rounded-lg p-4"
-                  >
-
-                    <div className="flex items-center gap-2">
-
-                      <span className="w-2 h-2 rounded-full bg-[#36A9C4]" />
-
-                      <span className="text-[10px] text-white/40">
-                        Connected
-                      </span>
-
-                    </div>
-
-                    <p className="text-sm mt-3">
-                      {department}
-                    </p>
-
-                  </div>
-
-                ))}
-
-              </div>
-
-            </div>
-
-          </section>
+</section>
 
     </div>
   );

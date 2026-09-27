@@ -1,6 +1,18 @@
+import { useState } from "react";
+
 export default function Topbar() {
+  const [menuOpen, setMenuOpen] = useState(false);
+
   return (
-    <header className="h-20 bg-white border-b border-[#0B1F33]/10 flex items-center justify-between px-6 md:px-8">
+    <header className="relative h-20 bg-white border-b border-[#0B1F33]/10 flex items-center justify-between px-6 md:px-8">
+
+      {/* MOBILE MENU BUTTON */}
+      <button
+        onClick={() => setMenuOpen(!menuOpen)}
+        className="lg:hidden w-10 h-10 rounded-lg bg-[#F5F7F8] text-[#0B1F33] flex items-center justify-center text-xl mr-4"
+      >
+        ☰
+      </button>
 
       {/* SEARCH */}
       <div className="relative w-full max-w-md">
@@ -49,6 +61,68 @@ export default function Topbar() {
         </div>
 
       </div>
+
+      {/* MOBILE MENU */}
+      {menuOpen && (
+        <div className="lg:hidden absolute top-20 left-0 right-0 bg-[#0B1F33] text-white z-50 border-t border-white/10 shadow-xl">
+
+          <div className="p-4 space-y-1">
+
+            <a
+              href="/dashboard"
+              className="block px-4 py-3 rounded-lg hover:bg-white/10"
+            >
+              Dashboard
+            </a>
+
+            <a
+              href="/services"
+              className="block px-4 py-3 rounded-lg hover:bg-white/10"
+            >
+              Services
+            </a>
+
+            <a
+              href="/applications"
+              className="block px-4 py-3 rounded-lg hover:bg-white/10"
+            >
+              Applications
+            </a>
+
+            <a
+              href="/documents"
+              className="block px-4 py-3 rounded-lg hover:bg-white/10"
+            >
+              Documents
+            </a>
+
+            <a
+              href="/schemes"
+              className="block px-4 py-3 rounded-lg hover:bg-white/10"
+            >
+              Schemes & Benefits
+            </a>
+
+            <div className="border-t border-white/10 my-2" />
+
+            <a
+              href="/integration"
+              className="block px-4 py-3 rounded-lg hover:bg-white/10"
+            >
+              Integration
+            </a>
+
+            <a
+              href="/settings"
+              className="block px-4 py-3 rounded-lg hover:bg-white/10"
+            >
+              Settings
+            </a>
+
+          </div>
+
+        </div>
+      )}
 
     </header>
   );

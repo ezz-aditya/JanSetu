@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { NavLink } from "react-router";
 
 const menuItems = [
@@ -116,9 +117,12 @@ export default function Sidebar() {
 
         </div>
 
-        <button className="w-full text-left text-sm text-white/40 hover:text-white px-3 py-4">
-          ↪ Logout
-        </button>
+        <button
+  onClick={() => window.location.href = "/"}
+  className="w-full text-left text-sm text-white/40 hover:text-white px-3 py-4"
+>
+  ↪ Logout
+</button>
 
       </div>
 
