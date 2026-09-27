@@ -517,7 +517,7 @@ export default function Landing() {
           <div className="border-t border-white/10 mt-10 pt-6 flex flex-col md:flex-row justify-between gap-3 text-xs text-white/30">
 
             <span>
-              JAN SETU / SIH26129
+              JAN SETU 
             </span>
 
             <span>
