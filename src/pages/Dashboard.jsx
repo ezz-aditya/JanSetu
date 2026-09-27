@@ -131,20 +131,24 @@ export default function Dashboard() {
 
               </div>
 
-              <button className="text-sm text-[#0B6E99] font-semibold">
-                View all →
-              </button>
+              <button
+                onClick={() => window.location.href = "/services"}
+                className="text-sm text-[#0B6E99] font-semibold"
+              >
+             View all →
+             </button>
 
-            </div>
+             </div>
 
             <div className="grid md:grid-cols-2 xl:grid-cols-4 gap-4">
 
               {services.map((service) => (
 
                 <button
-                  key={service.no}
-                  className="text-left bg-white border border-[#0B1F33]/10 rounded-xl p-6 hover:border-[#0B6E99]/40 hover:-translate-y-1 transition-all duration-300"
-                >
+            key={service.no}
+             onClick={() => window.location.href = "/services"}
+            className="text-left bg-white border border-[#0B1F33]/10 rounded-xl p-6 hover:border-[#0B6E99]/40 hover:-translate-y-1 transition-all duration-300"
+            >
 
                   <span className="text-xs font-bold text-[#0B6E99]">
                     {service.no}
